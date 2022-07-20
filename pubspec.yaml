@@ -3,7 +3,7 @@ description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -30,10 +30,37 @@ dependencies:
   flutter:
     sdk: flutter
 
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+
+  # This is a simple Service Locator for Dart and Flutter projects with some
+  # additional goodies highly inspired by Splat. It can be used instead of
+  # InheritedWidget or Provider to access objects e.g. from your UI.
+  get_it: ^7.2.0
+
+  # Widgets that make it easy to integrate blocs and cubits into Flutter.
+  # Built to work with package:bloc.
+  flutter_bloc: ^8.0.1
+
+  # Equatable overrides == and hashCode for you so you don't have to waste
+  # your time writing lots of boilerplate code.
+  equatable: ^2.0.3
+
+  # Functional programming in Dart
+  dartz: ^0.10.1
+
+  # This plugin allows Flutter apps to discover network connectivity and
+  # configure themselves accordingly. It can distinguish between
+  # cellular vs WiFi connection.
+  connectivity_plus: ^2.3.6
+
+  # A composable, Future-based library for making HTTP requests.
+  http: ^0.13.4
+
+  # Wraps platform-specific persistent storage for simple data
+  # (NSUserDefaults on iOS and macOS, SharedPreferences on Android, etc.).
+  shared_preferences: ^2.0.15
 
 dev_dependencies:
   flutter_test:
@@ -46,12 +73,18 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
 
+  # Mock library for Dart inspired by Mockito.
+  mockito: ^5.2.0
+
+  # The build_runner package provides a concrete way of generating
+  # files using Dart code, outside of tools like pub
+  build_runner: ^2.2.0
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
