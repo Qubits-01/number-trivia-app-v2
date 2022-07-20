@@ -1,15 +1,12 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:number_trivia_app_v2/core/errors/failure.dart';
 import 'package:number_trivia_app_v2/features/number_trivia/domain/entities/number_trivia_entity.dart';
-import 'package:number_trivia_app_v2/features/number_trivia/domain/repositories_contract/number_trivia_repository_contract.dart';
 import 'package:number_trivia_app_v2/features/number_trivia/domain/use_cases/get_concrete_number_trivia.dart';
 
-import 'get_concrete_number_trivia_test.mocks.dart';
+import 'mocks/generate_mock_number_trivia_repository_contract.mocks.dart';
 
-@GenerateMocks([NumberTriviaRepositoryContract])
 void main() {
   late final MockNumberTriviaRepositoryContract
       mockNumberTriviaRepositoryContract;
