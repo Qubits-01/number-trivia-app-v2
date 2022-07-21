@@ -1,10 +1,10 @@
-import 'package:number_trivia_app_v2/core/platform/network_info.dart';
-import 'package:number_trivia_app_v2/features/number_trivia/data/data_sources/number_trivia_local_data_source.dart';
-import 'package:number_trivia_app_v2/features/number_trivia/data/data_sources/number_trivia_remote_data_source.dart';
-import 'package:number_trivia_app_v2/features/number_trivia/domain/entities/number_trivia_entity.dart';
-import 'package:number_trivia_app_v2/core/errors/failures.dart';
+import '../../../../core/platform/network_info.dart';
+import '../data_sources/number_trivia_local_data_source.dart';
+import '../data_sources/number_trivia_remote_data_source.dart';
+import '../../domain/entities/number_trivia_entity.dart';
+import '../../../../core/errors/failures.dart';
 import 'package:dartz/dartz.dart';
-import 'package:number_trivia_app_v2/features/number_trivia/domain/repositories_contract/number_trivia_repository_contract.dart';
+import '../../domain/repositories_contract/number_trivia_repository_contract.dart';
 
 class NumberTriviaRepositoryImpl implements NumberTriviaRepositoryContract {
   final NetworkInfo networkInfo;
