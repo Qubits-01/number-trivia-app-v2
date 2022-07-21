@@ -1,11 +1,13 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 
-import '../errors/failure.dart';
+import '../errors/failures.dart';
 
 /// Parameters [Params] have to be put into a container object so that they can be
 /// included in this abstract base class method definition.
 abstract class UseCase<Type, Params> {
+  const UseCase();
+
   Future<Either<Failure, Type>> call({required Params params});
 }
 

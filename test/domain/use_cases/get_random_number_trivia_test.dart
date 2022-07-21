@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:number_trivia_app_v2/core/errors/failure.dart';
+import 'package:number_trivia_app_v2/core/errors/failures.dart';
 import 'package:number_trivia_app_v2/core/use_cases/use_case.dart';
 import 'package:number_trivia_app_v2/features/number_trivia/domain/entities/number_trivia_entity.dart';
 import 'package:number_trivia_app_v2/features/number_trivia/domain/repositories_contract/number_trivia_repository_contract.dart';
