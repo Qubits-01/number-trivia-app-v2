@@ -12,8 +12,8 @@ abstract class Failure extends Equatable {
 }
 
 // General failures.
-class SeverFailure extends Failure {
-  const SeverFailure();
+class ServerFailure extends Failure {
+  const ServerFailure();
 }
 
 class CacheFailure extends Failure {
