@@ -50,10 +50,10 @@ dependencies:
   # Functional programming in Dart
   dartz: ^0.10.1
 
-  # This plugin allows Flutter apps to discover network connectivity and
-  # configure themselves accordingly. It can distinguish between
-  # cellular vs WiFi connection.
-  connectivity_plus: ^2.3.6
+  # # This plugin allows Flutter apps to discover network connectivity and
+  # # configure themselves accordingly. It can distinguish between
+  # # cellular vs WiFi connection.
+  # connectivity_plus: ^2.3.6
 
   # A composable, Future-based library for making HTTP requests.
   http: ^0.13.4
@@ -61,6 +61,11 @@ dependencies:
   # Wraps platform-specific persistent storage for simple data
   # (NSUserDefaults on iOS and macOS, SharedPreferences on Android, etc.).
   shared_preferences: ^2.0.15
+
+  # A pure Dart utility library that checks for an internet connection by opening a
+  # socket to a list of specified addresses, each with individual port and timeout.
+  data_connection_checker_nulls: ^0.0.2
+  # data_connection_checker: ^0.3.4
 
 dev_dependencies:
   flutter_test:
