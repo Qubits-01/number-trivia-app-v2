@@ -1,3 +1,8 @@
+import 'dart:convert';
+
+import 'package:http/http.dart' as http;
+import 'package:number_trivia_app_v2/core/errors/exceptions.dart';
+
 import '../models/number_trivia_model.dart';
 
 abstract class NumberTriviaRemoteDataSource {
@@ -12,4 +17,33 @@ abstract class NumberTriviaRemoteDataSource {
   ///
   /// Throws a [ServerException] for all error codes.
   Future<NumberTriviaModel> getRandomNumberTrivia();
+}
+
+class NumberTriviaRemoteDataSourceImpl implements NumberTriviaRemoteDataSource {
+  final http.Client client;
+
+  const NumberTriviaRemoteDataSourceImpl({required this.client});
+
+  @override
+  Future<NumberTriviaModel> getConcreteNumberTrivia({
+    required int number,
+  }) =>
+      _getTriviaFromUrl(url: 'http://numbersapi.com/$number');
+
+  @override
+  Future<NumberTriviaModel> getRandomNumberTrivia() =>
+      _getTriviaFromUrl(url: 'http://numbersapi.com/random');
+
+  Future<NumberTriviaModel> _getTriviaFromUrl({required String url}) async {
+    final http.Response response = await client.get(
+      Uri.parse(url),
+      headers: {'Content-Type': 'application/json'},
+    );
+
+    if (response.statusCode == 200) {
+      return NumberTriviaModel.fromJson(json.decode(response.body));
+    } else {
+      throw const ServerException();
+    }
+  }
 }

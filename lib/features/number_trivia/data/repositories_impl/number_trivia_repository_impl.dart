@@ -27,7 +27,8 @@ class NumberTriviaRepositoryImpl implements NumberTriviaRepositoryContract {
     required int number,
   }) async {
     return await _getTrivia(
-        () => remoteDataSource.getConcreteNumberTrivia(number: number));
+      () => remoteDataSource.getConcreteNumberTrivia(number: number),
+    );
   }
 
   @override

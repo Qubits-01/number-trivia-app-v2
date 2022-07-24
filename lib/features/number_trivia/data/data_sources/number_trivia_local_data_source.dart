@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:number_trivia_app_v2/core/errors/exceptions.dart';
+import '../../../../core/errors/exceptions.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/number_trivia_model.dart';
