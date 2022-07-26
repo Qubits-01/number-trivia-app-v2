@@ -1,22 +1,22 @@
 part of 'number_trivia_bloc.dart';
 
 abstract class NumberTriviaEvent extends Equatable {
-  final List<dynamic> properties;
+  final String? property;
 
-  const NumberTriviaEvent({
-    List<dynamic> props = const <dynamic>[],
-  }) : properties = props;
+  const NumberTriviaEvent({this.property});
 
   @override
-  List<Object> get props => [properties];
+  List<Object?> get props => [property];
 }
 
 class NumberTriviaGetBtnPressed extends NumberTriviaEvent {
   final String numberString;
 
-  NumberTriviaGetBtnPressed({
+  const NumberTriviaGetBtnPressed({
     required this.numberString,
-  }) : super(props: [numberString]);
+  }) : super(property: numberString);
 }
 
-class NumberTriviaRandomBtnPressed extends NumberTriviaEvent {}
+class NumberTriviaRandomBtnPressed extends NumberTriviaEvent {
+  const NumberTriviaRandomBtnPressed();
+}
