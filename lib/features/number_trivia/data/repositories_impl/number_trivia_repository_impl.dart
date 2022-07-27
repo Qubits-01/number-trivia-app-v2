@@ -1,12 +1,12 @@
 import 'package:dartz/dartz.dart';
 
 import '../../../../core/errors/exceptions.dart';
+import '../../../../core/errors/failures.dart';
 import '../../../../core/networking/network_info.dart';
+import '../../domain/entities/number_trivia_entity.dart';
+import '../../domain/repositories_contract/number_trivia_repository_contract.dart';
 import '../data_sources/number_trivia_local_data_source.dart';
 import '../data_sources/number_trivia_remote_data_source.dart';
-import '../../domain/entities/number_trivia_entity.dart';
-import '../../../../core/errors/failures.dart';
-import '../../domain/repositories_contract/number_trivia_repository_contract.dart';
 import '../models/number_trivia_model.dart';
 
 typedef _ConcreteOrRandomChooser = Future<NumberTriviaModel> Function();
