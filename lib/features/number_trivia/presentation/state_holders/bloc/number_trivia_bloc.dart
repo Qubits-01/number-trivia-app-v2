@@ -23,7 +23,7 @@ class NumberTriviaBloc extends Bloc<NumberTriviaEvent, NumberTriviaState> {
     required this.inputConverter,
   }) : super(const NumberTriviaInitial()) {
     on<NumberTriviaGetBtnPressed>(
-      (event, emit) => _getBtnPressedEvent(event, emit),
+      (event, emit) async => await _getBtnPressedEvent(event, emit),
     );
 
     on<NumberTriviaRandomBtnPressed>(
@@ -31,17 +31,17 @@ class NumberTriviaBloc extends Bloc<NumberTriviaEvent, NumberTriviaState> {
     );
   }
 
-  void _getBtnPressedEvent(
+  Future<void> _getBtnPressedEvent(
     NumberTriviaGetBtnPressed event,
     Emitter<NumberTriviaState> emit,
-  ) {
+  ) async {
     _emitInitialThenInProgress(emit);
 
     final Either<Failure, int> parsedInt =
         inputConverter.stringToUnsignedInt(stringValue: event.numberString);
 
-    parsedInt.fold(
-      (failure) => emit(NumberTriviaLoadFailure(
+    await parsedInt.fold(
+      (failure) async => emit(NumberTriviaLoadFailure(
         message: _mapFailureToErrorMsg(failure: failure),
       )),
       (integer) async {
