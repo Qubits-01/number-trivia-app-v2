@@ -38,7 +38,7 @@ class _TriviaControlState extends State<TriviaControls> {
                 onPressed: _addGetBtnPressedEvent,
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(width: 10),
             Expanded(
               child: ElevatedButton(
                 child: const Text('Get Random Trivia'),
